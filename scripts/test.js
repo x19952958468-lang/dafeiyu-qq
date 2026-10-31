@@ -4,6 +4,7 @@ import { REPO_ROOT } from '../src/paths.js';
 // Explicit offline suite. Operational utilities and check-proactive.js are excluded.
 const files = [
   "scripts/check-install.js",
+  "scripts/check-preset.js",
   "tools/check-actions.js",
   "tools/check-bilibili-actions.js",
   "tools/check-bilibili-chat.js",

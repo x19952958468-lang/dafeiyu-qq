@@ -1,6 +1,6 @@
 # 可选本地推理组件
 
-主机器人通过文件队列或本机 HTTP 调用这些组件。它们分别使用独立的 Python 环境，避免 PyTorch、Transformers 和 MLX 版本冲突。Git 仓库只包含适配代码、参数示例和下载方法；模型、虚拟环境、参考音频、登录态与生成内容不随仓库发布。
+主机器人通过文件队列或本机 HTTP 调用这些组件。它们分别使用独立的 Python 环境，避免 PyTorch、Transformers 和 MLX 版本冲突。此目录包含适配代码、参数示例和下载方法；模型、虚拟环境、登录态与生成内容不随仓库发布。仓库另提供 [三段获准分发的当前参考声音](../presets/current/README.md)。
 
 - [唱歌](singing/README.md)：搜索可播放歌曲，分离人声，Seed-VC 换音色，再混合伴奏；保留 D 参数和约 20 秒选段。
 - [情绪语音](breeze/README.md)：Breeze TTS 2 的 Apple Silicon MLX 后端。

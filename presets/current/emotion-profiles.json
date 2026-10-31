@@ -1,0 +1,45 @@
+{
+  "sad": {
+    "referenceAudio": "sad.wav",
+    "referenceText": "本来不想哭的。",
+    "cfgScale": 2,
+    "instruction": "保持参考人物的声线。像委屈得忍不住流泪、还想把话说清楚的人，气息不稳，有短促自然的哽咽和吸气，情绪随话意起伏。中间的抽泣是不规则的自然气声，不要唱腔，不要拖长元音，也不要逐字念出哭声提示。",
+    "variant": "mixed",
+    "vocalization": "sob"
+  },
+  "happy": {
+    "referenceAudio": "speech.wav",
+    "referenceText": "你还要听啊，那你不许笑我。",
+    "cfgScale": 4,
+    "instruction": "用明亮、藏不住笑意的声音说话。起句扬起来，听起来真的很开心，重点词轻快地加重，后半句自然放软。只说给定台词。",
+    "variant": "mixed"
+  },
+  "playful": {
+    "referenceAudio": "speech.wav",
+    "referenceText": "你还要听啊，那你不许笑我。",
+    "cfgScale": 4,
+    "instruction": "带着笑意和一点撒娇，像故意逗熟人。问句轻轻扬起，玩笑的落点留短停，结尾俏皮地放软。只说给定台词。",
+    "variant": "mixed"
+  },
+  "annoyed": {
+    "referenceAudio": "speech.wav",
+    "referenceText": "你还要听啊，那你不许笑我。",
+    "cfgScale": 4,
+    "instruction": "气呼呼地抗议，带一点不服气。开头有冲劲，反驳的重点词加重，结尾短促坚定。保持原来的声线，只说给定台词。",
+    "variant": "mixed"
+  },
+  "gentle": {
+    "referenceAudio": "speech.wav",
+    "referenceText": "你还要听啊，那你不许笑我。",
+    "cfgScale": 4,
+    "instruction": "像在身边轻声安慰熟人。第一句带心疼和关心，中间留呼吸，最后一句柔软、真诚地落下。只说给定台词。",
+    "variant": "mixed"
+  },
+  "surprised": {
+    "referenceAudio": "speech.wav",
+    "referenceText": "你还要听啊，那你不许笑我。",
+    "cfgScale": 4,
+    "instruction": "突然听到意外消息，真切地吃惊。惊讶词明显扬起，短停之后展开声音，结尾仍带惊讶。只说给定台词。",
+    "variant": "mixed"
+  }
+}

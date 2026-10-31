@@ -55,3 +55,12 @@ __pycache__/
 .DS_Store
 coverage/
 *.local.json
+
+# Keep privately transferred persona text local
+/presets/current/persona.local.md
+
+# Specifically authorized voice references; all other media remain ignored
+!/presets/current/references/
+!/presets/current/references/speech.wav
+!/presets/current/references/sad.wav
+!/presets/current/references/singing.wav

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "mode": "auto",
+  "autoRate": 0.7,
+  "intensity": 0.85,
+  "maxChars": 160,
+  "backendUrl": "http://127.0.0.1:6197/v1/audio/speech",
+  "referenceAudio": "speech.wav",
+  "referenceText": "你还要听啊，那你不许笑我。",
+  "voiceId": "",
+  "ffmpeg": "ffmpeg",
+  "requestTimeoutMs": 120000,
+  "queueTimeoutMs": 120000,
+  "cfgScale": 4,
+  "seed": 42
+}

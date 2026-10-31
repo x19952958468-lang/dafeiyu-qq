@@ -77,7 +77,7 @@ cp integrations/breeze/speech-config.example.json data/speech/config.json
 
 `mode` 可用 `auto`（按比例语音）、`voice`（优先语音）或 `text`（文字）。语音失败、超时或台词分离不可靠时会回退文字，不把生成失败的片段当作成功发送。
 
-情绪参考配置位于 `data/speech/emotion-profiles.json`，可选情绪为 `happy`、`sad`、`annoyed`、`gentle`、`playful`、`surprised`。模板为 [emotion-profiles.example.json](../integrations/breeze/emotion-profiles.example.json)。参考音频、对应转写和权重不随仓库分发。参考音频路径应是本机可读的绝对路径；替换模板中的占位项后再使用。
+情绪参考配置位于 `data/speech/emotion-profiles.json`，可选情绪为 `happy`、`sad`、`annoyed`、`gentle`、`playful`、`surprised`。模板为 [emotion-profiles.example.json](../integrations/breeze/emotion-profiles.example.json)。通用模板需自行填写；[当前预设](../presets/current/README.md) 另附获准分发的参考片段及对应转写，权重仍需单独下载。参考音频路径应是本机可读的绝对路径；替换模板中的占位项后再使用。
 
 ## 路径与环境变量
 

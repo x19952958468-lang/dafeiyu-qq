@@ -13,7 +13,8 @@
     "doctor": "node tools/doctor.js",
     "setup": "node scripts/setup.js",
     "test": "node scripts/test.js",
-    "check": "node scripts/check.js"
+    "check": "node scripts/check.js",
+    "preset:current": "node scripts/apply-preset.js"
   },
   "license": "MIT",
   "repository": {

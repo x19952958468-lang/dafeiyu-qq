@@ -40,7 +40,7 @@ sh integrations/breeze/serve.sh
 
 手动启动只用于本地检查；检查完按 Ctrl+C 停止，再用 `npm start` 启动主机器人。不要保留手动服务与 Node 同时管理同一个端口，主程序会拒绝接管不属于自己的现存进程。
 
-默认监听 `127.0.0.1:6197`，不开放 WebSocket，模型加载阶段 `/health` 返回未就绪。参考 WAV 和准确转写需自行提供，写入本地 `data/speech/config.json` 的 `referenceAudio` / `referenceText`；语音管理界面用于启用、模式、比例和强度等选项。仓库不包含原始演示声音。固定随机种子不会保证不同句子的音色完全一致；此后端的情绪、哭声及音色稳定性仍需试听调整。
+默认监听 `127.0.0.1:6197`，不开放 WebSocket，模型加载阶段 `/health` 返回未就绪。参考 WAV 和准确转写需自行提供，写入本地 `data/speech/config.json` 的 `referenceAudio` / `referenceText`；语音管理界面用于启用、模式、比例和强度等选项。也可通过 [当前预设](../../presets/current/README.md) 导入已获准分发的演示参考片段。固定随机种子不会保证不同句子的音色完全一致；此后端的情绪、哭声及音色稳定性仍需试听调整。
 
 `DAFEIYU_WORK_DIR` 可改变默认 `work/` 根目录（建议绝对路径），模型下载器与启动器均读取它。启动器支持更具体的环境变量：`BREEZE_SOURCE_DIR`、`BREEZE_PYTHON`、`BREEZE_MODELS_DIR`、`BREEZE_PORT`、`BREEZE_MLX_CACHE_GB`。`BREEZE_LOCAL_VARIANT` 仅接受 `8bit` 或 `mixed`。相对环境变量路径按进程当前目录解释，建议使用绝对路径。Node 的 backend 启动配置指向 `integrations/breeze/serve.sh`；正常使用时由主程序持有重型计算锁并启动服务，无需另留一个常驻实例。
 
@@ -55,7 +55,7 @@ cp -n integrations/breeze/speech-config.example.json data/speech/config.json
 
 在本地文件中把 `PLACEHOLDER_ABSOLUTE_REFERENCE_WAV` 替换为真实、存在、可读的 WAV **绝对路径**；把 `REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT` 替换为该 WAV 的准确原话。需要时修改 `ffmpeg` 可执行文件路径。占位符不是有效配置，不能直接启用。完成模型安装和本地试听后，才把 `enabled` 改成 `true` 或在管理界面开启。
 
-[`emotion-profiles.example.json`](emotion-profiles.example.json) 可选，含 `happy`、`sad`、`annoyed`、`gentle`、`playful`、`surprised` 六种配置。它们提供通用表演指令，使用 `mixed` 模型；`sad` 使用 CFG 2 和 `vocalization: "sob"`，其余使用 CFG 4。这里复现的是配置机制和参数，不包含原部署的声音，也不保证听感相同。
+[`emotion-profiles.example.json`](emotion-profiles.example.json) 可选，含 `happy`、`sad`、`annoyed`、`gentle`、`playful`、`surprised` 六种配置。它们提供通用表演指令，使用 `mixed` 模型；`sad` 使用 CFG 2 和 `vocalization: "sob"`，其余使用 CFG 4。这些示例模板提供配置机制和参数；要沿用原部署的参考片段与参数，请使用 [当前预设](../../presets/current/README.md)。模型仍不保证每句听感相同。
 
 ```sh
 cp -n integrations/breeze/emotion-profiles.example.json data/speech/emotion-profiles.json

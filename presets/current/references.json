@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "file": "speech.wav",
+      "sha256": "54188a83540b9c79c9dc3cfd26cd65435254cbc72910017c208dd33469b40c19",
+      "bytes": 144124,
+      "durationSeconds": 3.0,
+      "sourceUrl": "https://v.douyin.com/lc4-1AWcVMY/"
+    },
+    {
+      "file": "sad.wav",
+      "sha256": "b311ff91779c3f0c4947f3b27f3017b02d93aaa147b816b0ee3007ea136234e4",
+      "bytes": 75004,
+      "durationSeconds": 1.56,
+      "sourceUrl": "https://v.douyin.com/lc4-1AWcVMY/"
+    },
+    {
+      "file": "singing.wav",
+      "sha256": "16847fbfd74595b2f61146cb3adc8c4049b775c99acf0acec5998a8f0cfc0acb",
+      "bytes": 882044,
+      "durationSeconds": 10.0,
+      "sourceUrl": "https://www.bilibili.com/video/BV1hXbN6VEKV/"
+    }
+  ],
+  "redistribution": {
+    "basis": "Repository owner confirmed permission for public redistribution on 2026-10-31.",
+    "license": "These third-party-derived recordings are not covered by the repository MIT license. See README for sources."
+  }
+}
