@@ -1,0 +1,56 @@
+import { spawnSync } from 'node:child_process';
+import { REPO_ROOT } from '../src/paths.js';
+
+// Explicit offline suite. Operational utilities and check-proactive.js are excluded.
+const files = [
+  "scripts/check-install.js",
+  "tools/check-actions.js",
+  "tools/check-bilibili-actions.js",
+  "tools/check-bilibili-chat.js",
+  "tools/check-bilibili-client.js",
+  "tools/check-bilibili-content.js",
+  "tools/check-bilibili-conversation.js",
+  "tools/check-bilibili-server.js",
+  "tools/check-bilibili-service.js",
+  "tools/check-bilibili-ui-session.js",
+  "tools/check-fillers.js",
+  "tools/check-focus.js",
+  "tools/check-group-rate.js",
+  "tools/check-heavy-compute.js",
+  "tools/check-model-coordination.js",
+  "tools/check-persona-context.js",
+  "tools/check-persona-editor-api.js",
+  "tools/check-persona-editor-store.js",
+  "tools/check-persona-editor-ui.js",
+  "tools/check-persona-form-api.js",
+  "tools/check-persona-form-ui.js",
+  "tools/check-persona-hot-reload.js",
+  "tools/check-persona-http-errors.js",
+  "tools/check-persona-profile.js",
+  "tools/check-persona-request-diagnostics.js",
+  "tools/check-persona-switch-chat.js",
+  "tools/check-qq-actions.js",
+  "tools/check-quality.js",
+  "tools/check-singing.js",
+  "tools/check-speech-backend-variants.js",
+  "tools/check-speech-cry-events.js",
+  "tools/check-speech-direction.js",
+  "tools/check-speech-emotion-profiles.js",
+  "tools/check-speech-emotion.js",
+  "tools/check-speech-integration.js",
+  "tools/check-speech-plan.js",
+  "tools/check-speech-preview-api.js",
+  "tools/check-speech-preview-profiles.js",
+  "tools/check-speech-profile-variants.js",
+  "tools/check-speech-semantic-delivery.js",
+  "tools/check-speech-stage-directions.js",
+  "tools/check-speech-ui.js",
+  "tools/check-speech.js",
+  "tools/check-spoken-text.js",
+  "tools/check-triggers.js",
+  "tools/check-user-policy.js",
+  "tools/check-whitelist.js"
+];
+const result = spawnSync(process.execPath, ['--test', '--test-concurrency=4', ...files], { cwd: REPO_ROOT, stdio: 'inherit' });
+if (result.error) console.error(result.error.message);
+process.exit(result.status ?? 1);

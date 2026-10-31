@@ -1,0 +1,19 @@
+{
+  "python": "work/singing-venv/bin/python",
+  "seed_root": "work/seed-vc",
+  "data_root": "data/singing",
+  "reference": "data/singing/reference.wav",
+  "ffmpeg": "ffmpeg",
+  "runtime_log": "data/singing/worker.log",
+  "steps": 50,
+  "pitch_shift": 12,
+  "inference_cfg_rate": 0.7,
+  "vocal_highpass_hz": 70,
+  "vocal_lowpass_hz": 8000,
+  "output_lufs": -18,
+  "target_seconds": 20,
+  "inference_timeout_sec": 300,
+  "env": {
+    "PYTORCH_ENABLE_MPS_FALLBACK": "1"
+  }
+}

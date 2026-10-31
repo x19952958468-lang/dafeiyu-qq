@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="csrf-token" content="__CSRF_NONCE__">
+  <title>大肥鱼 · 人设、生活与语音</title>
+  <style nonce="__SCRIPT_NONCE__">
+    :root{color-scheme:light;--ink:#173f3b;--muted:#687e79;--line:#dce6e0;--green:#1d7665;--paper:#fffefa;--pale:#eff6ef}
+    *{box-sizing:border-box}body{margin:0;background:#f3f5ed;color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 16px;background:var(--green);color:white;font-weight:600}button.secondary{background:#e8efe8;color:var(--ink)}button.ghost{background:none;color:var(--green);border:1px solid var(--line)}button:disabled{cursor:not-allowed;opacity:.45}button:hover:not(:disabled){filter:brightness(.94)}input,select{width:100%;background:white;color:var(--ink);border:1px solid #cbd9d0;border-radius:8px;padding:9px 10px;min-width:0}input:focus,select:focus,button:focus-visible{outline:3px solid #b5d6ca;outline-offset:2px}label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}a{color:var(--green);text-underline-offset:3px}h1,h2,h3,p{margin:0}h1{font-size:34px;line-height:1.3;letter-spacing:-1px}h2{font-size:19px}h3{font-size:15px}.muted{color:var(--muted)}.small{font-size:12px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green)}.shell{max-width:1080px;margin:auto;padding:38px 24px 64px}.topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.brand{display:flex;align-items:center;gap:10px;font-weight:700}.fish{display:grid;place-items:center;width:34px;height:34px;border:1px solid #c4d6cb;border-radius:50%;font-size:20px}.local{font-size:12px;color:var(--muted)}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:28px}.hero p{margin-top:11px;max-width:620px;color:var(--muted)}.badge{display:inline-flex;align-items:center;gap:8px;background:#e4ede4;border:1px solid #cfdfd1;border-radius:30px;padding:6px 13px;font-size:12px;white-space:nowrap}.dot{width:7px;height:7px;border-radius:50%;background:#719386}.badge.ready .dot{background:#24816a}.grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:22px;align-items:start}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 4px 18px #173f3b04}.card+.card{margin-top:20px}.card-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.step{font-size:11px;color:var(--muted);font-weight:600;border:1px solid var(--line);padding:3px 8px;border-radius:20px}.field{margin-bottom:17px}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.fields.two{grid-template-columns:repeat(2,minmax(0,1fr))}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.note{padding:13px 14px;background:var(--pale);border-radius:10px;color:#46635a;font-size:13px}.divider{height:1px;background:var(--line);margin:21px 0}.notice{display:none;border:1px solid #d3ad80;background:#fff4e4;color:#6a4b20;border-radius:12px;padding:12px 16px;margin-bottom:20px}.notice.visible{display:block}.notice.ok{border-color:#bfd8ca;background:#eaf4eb;color:#2a604d}.qr-placeholder,.qr-box{min-height:236px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;text-align:center;border:1px dashed #c8d8cd;border-radius:13px;padding:20px;background:#f6f8f2}.qr-placeholder svg{height:52px;width:52px;stroke:#83a595;fill:none;stroke-width:1.4}.qr-box img{height:210px;width:210px;max-width:100%;object-fit:contain;border:7px solid white;border-radius:8px}.qr-box[hidden],.qr-placeholder[hidden],[hidden]{display:none!important}.account{background:#eff5ec;padding:20px;border-radius:13px}.account-name{font-size:20px;font-weight:600;margin-bottom:3px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 20px}.metric{padding:15px 10px;border:1px solid var(--line);border-radius:11px;text-align:center}.metric strong{display:block;font-size:25px;font-weight:600;line-height:1.2;margin-bottom:5px}.metric span{color:var(--muted);font-size:11px}.timing{font-size:12px;color:var(--muted);display:grid;gap:6px}.history{margin-top:22px}.history-list{display:grid;gap:0}.history-item{padding:15px 0;border-bottom:1px solid var(--line)}.history-item:first-child{padding-top:0}.history-item:last-child{border-bottom:0;padding-bottom:0}.history-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px;color:var(--muted);margin-bottom:6px}.history-title{font-size:14px;font-weight:600}.history-message{font-size:13px;color:var(--muted);margin-top:4px;white-space:pre-wrap;overflow-wrap:anywhere}.empty{text-align:center;padding:25px 10px;color:var(--muted);font-size:13px}.mt6{margin-top:6px}.mt8{margin-top:8px}.mt12{margin-top:12px}.footer{margin-top:24px;font-size:12px;color:var(--muted);text-align:center}
+    .speech-card{margin-top:22px}.speech-intro{margin-bottom:20px}.range-label{display:flex;justify-content:space-between;gap:12px}.range-label output{font-weight:400;color:var(--muted)}input[type=range]{padding:8px 0;border:0;background:transparent;accent-color:var(--green)}.speech-hint{min-height:22px}.field:has(input:disabled){opacity:.55}
+    .page-nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13px}.persona-card{margin-bottom:22px;scroll-margin-top:20px}.persona-editor{display:block;width:100%;min-height:320px;resize:vertical;border:1px solid #cbd9d0;border-radius:10px;background:white;color:var(--ink);padding:15px;font:14px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.persona-editor:focus{outline:3px solid #b5d6ca;outline-offset:2px}.persona-editor:disabled{background:#f4f6f1}.persona-meta{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-top:7px}.persona-result{min-height:22px;margin-top:12px;font-size:13px;color:#46635a}.persona-result.warning{color:#8b5428}.persona-backups{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px}.persona-backups .field{flex:1;min-width:220px;margin:0}.persona-card .actions{margin-top:14px}
+    @media(max-width:760px){.shell{padding:24px 16px 40px}.grid{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column;gap:15px}h1{font-size:28px}.card{padding:20px}.fields{gap:8px}.topline{margin-bottom:22px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <div class="topline"><div class="brand"><span class="fish" aria-hidden="true">𓆟</span> 大肥鱼</div><span class="local">本机专用 · 人设与生活设置</span></div>
+  <header class="hero"><div><div class="eyebrow">A little life on Bilibili</div><h1>让她去看看，世界的新鲜事。</h1><p>挑选视频、理解内容，再带着自己的想法回来。登录后，她会按下面的设置浏览 B站、发表评论，并向你分享值得一看的视频。</p></div><div class="badge" id="phaseBadge"><span class="dot"></span><span id="phaseText">正在读取状态</span></div></header>
+  <div id="notice" class="notice" role="status" aria-live="polite"></div>
+  <section class="card persona-card" id="persona" aria-labelledby="personaTitle">
+    <div class="card-header"><h2 id="personaTitle">人设编辑</h2><span id="personaStatus" class="step">正在读取</span></div>
+    <p class="muted speech-intro">直接在这里填写她的人设。保存后用于下一条回复，旧版本自动备份，聊天记录保留。</p>
+    <label for="personaText">当前人设正文</label>
+    <textarea id="personaText" class="persona-editor" rows="14" spellcheck="false" aria-describedby="personaResult personaCount" placeholder="正在读取当前人设…" disabled></textarea>
+    <div class="persona-meta small muted"><span id="personaCount">0 字</span><span id="personaUpdated">尚未读取</span></div>
+    <div class="actions"><button id="savePersona" disabled>保存并生效</button><button id="reloadPersona" class="ghost" disabled>重载当前人设</button></div>
+    <p id="personaResult" class="persona-result" role="status" aria-live="polite">正在读取当前人设。</p>
+    <p class="muted small mt8">远程浏览器保存失败时，可<a href="/persona/editor" target="_blank" rel="noopener">打开兼容编辑页</a>。先复制当前草稿，原页面会保留。</p>
+    <div class="divider"></div>
+    <div class="persona-backups"><div class="field"><label for="personaBackup">恢复历史版本</label><select id="personaBackup" disabled><option value="">正在读取历史版本…</option></select></div><button id="loadPersonaBackup" class="secondary" disabled>载入为草稿</button></div>
+    <p class="muted small mt8">载入会替换编辑框中的内容；点击“保存并生效”后才会启用。</p>
+    <nav class="page-nav" aria-label="其他设置"><a href="#settingsTitle">B站设置</a><a href="#speechTitle">情绪语音</a><a href="#historyTitle">活动记录</a></nav>
+  </section>
+  <div class="grid">
+    <section class="card" aria-labelledby="settingsTitle">
+      <div class="card-header"><h2 id="settingsTitle">分享给谁，多久逛一次</h2><span class="step">01 · 偏好</span></div>
+      <div class="field"><label for="ownerQq">接收推荐的 QQ</label><select id="ownerQq"><option value="">正在读取好友列表…</option></select><p class="muted small mt6" id="friendsHint">推荐通过当前大肥鱼的 QQ 私聊发送。</p></div>
+      <div class="fields">
+        <div class="field"><label for="watchPerDay">每天最多看几条</label><input id="watchPerDay" type="number" min="1" max="30" value="6"></div>
+        <div class="field"><label for="commentPerDay">每天最多评论</label><input id="commentPerDay" type="number" min="0" step="1" value="2"><p class="muted small mt6">由你设置条数；0 表示不评论。</p></div>
+        <div class="field"><label for="sharePerDay">每天最多推荐</label><input id="sharePerDay" type="number" min="0" max="10" value="3"></div>
+      </div>
+      <div class="fields two">
+        <div class="field"><label for="intervalMinutes">浏览间隔（分钟）</label><input id="intervalMinutes" type="number" min="0" max="1440" step="any" value="90"><p class="muted small mt6">支持小数；0 表示本轮结束后继续下一轮。</p></div>
+        <div class="field"><label for="commentGapMinutes">评论间隔（分钟）</label><input id="commentGapMinutes" type="number" min="0" max="1440" step="any" value="120"><p class="muted small mt6">0 表示不额外等待，仍按每日条数执行。</p></div>
+        <div class="field"><label for="shareGapMinutes">推荐间隔（分钟）</label><input id="shareGapMinutes" type="number" min="15" max="1440" value="120"></div>
+      </div>
+      <div class="field"><label for="keywords">想看的话题</label><input id="keywords" maxlength="600" placeholder="例如：游戏、音乐、日常趣事"><p class="muted small mt6">用逗号分隔，也会探索推荐内容。</p></div>
+      <div class="note">这些是每天的上限，不是必须完成的数量。只有形成具体看法时才评论，只有觉得值得分享时才推荐。</div>
+      <div class="actions"><button id="saveSettings">保存设置</button><button id="refreshFriends" class="ghost">刷新好友</button></div>
+    </section>
+    <div>
+      <section class="card" aria-labelledby="loginTitle">
+        <div class="card-header"><h2 id="loginTitle">连接 B站账号</h2><span class="step">02 · 登录</span></div>
+        <div id="loggedOut">
+          <div id="qrPlaceholder" class="qr-placeholder"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"></rect><rect x="29" y="5" width="14" height="14" rx="2"></rect><rect x="5" y="29" width="14" height="14" rx="2"></rect><path d="M29 29h6v6h8M29 35v8h7M42 29v-5M24 5v17M5 24h14M24 29v14"></path></svg><p class="muted">准备好后，再生成登录二维码。<br><span class="small">使用哔哩哔哩 App 扫码确认。</span></p></div>
+          <div id="qrBox" class="qr-box" hidden><img id="qrImage" alt="B站登录二维码"><p id="qrStatus">等待扫码</p></div>
+          <div class="actions"><button id="startLogin" disabled>保存设置并开始扫码</button></div>
+          <p class="muted small mt12">确认登录后将启用浏览、B站评论与 QQ 推荐。登录凭据仅保存在这台 Mac 上。</p>
+        </div>
+        <div id="loggedIn" hidden><div class="account"><p class="eyebrow">已连接</p><p id="accountName" class="account-name"></p><p id="accountUid" class="muted small"></p></div><div class="actions"><button id="toggleEnabled" class="secondary">暂停自动活动</button></div><p class="muted small mt12">暂停后保留登录和观看记录，可随时继续。</p></div>
+      </section>
+      <section class="card" aria-labelledby="todayTitle">
+        <h2 id="todayTitle">今天的小记录</h2>
+        <div class="metrics"><div class="metric"><strong id="watchedCount">0</strong><span>看过的视频</span></div><div class="metric"><strong id="commentCount">0</strong><span>留下的评论</span></div><div class="metric"><strong id="sharedCount">0</strong><span>分享给你</span></div></div>
+        <div class="timing"><span id="lastRun">上次浏览：尚未开始</span><span id="nextRun">下次浏览：等待登录</span></div>
+        <div class="actions"><button id="dryRun" class="ghost">本地试运行</button></div><p class="muted small mt8">试运行只分析视频，不发评论或 QQ 消息。</p>
+      </section>
+    </div>
+  </div>
+  <section class="card speech-card" aria-labelledby="speechTitle">
+    <div class="card-header"><h2 id="speechTitle">情绪语音</h2><span id="speechStatus" class="step" role="status" aria-live="polite">正在读取状态</span></div>
+    <p class="muted speech-intro">和文字聊天共用现有人设与记忆，让她用更有情绪的声音接话。唱歌不受影响。</p>
+    <div class="fields two">
+      <div class="field"><label for="speechMode">回复方式</label><select id="speechMode" disabled><option value="auto">自然穿插</option><option value="voice">每条语音</option><option value="text">仅文字</option></select><p class="muted small mt6">自然穿插会在合适的聊天回复中使用语音。</p></div>
+      <div class="field"><label for="speechMaxChars">自动回复语音字数上限</label><input id="speechMaxChars" type="number" min="20" max="500" step="1" value="160" disabled><p class="muted small mt6">超过字数的回复保留完整文字。</p></div>
+      <div class="field"><label for="speechIntensity" class="range-label"><span>情绪强度</span><output id="speechIntensityValue" for="speechIntensity">65%</output></label><input id="speechIntensity" type="range" min="0" max="100" step="5" value="65" disabled><p class="muted small">轻柔克制 ↔ 更有表现力</p></div>
+      <div class="field"><label for="speechAutoRate" class="range-label"><span>自动语音比例</span><output id="speechAutoRateValue" for="speechAutoRate">30%</output></label><input id="speechAutoRate" type="range" min="0" max="100" step="5" value="30" disabled><p class="muted small">仅在“自然穿插”时生效。</p></div>
+    </div>
+    <p id="speechHint" class="muted small speech-hint">正在读取语音设置。</p>
+    <div class="actions"><button id="saveSpeech" disabled>保存语音设置</button></div>
+  </section>
+  <section class="card history" aria-labelledby="historyTitle"><div class="card-header"><h2 id="historyTitle">最近发生了什么</h2><span class="small muted">自动刷新</span></div><div id="historyList" class="history-list"><div class="empty">还没有活动记录。登录前可以先做一次本地试运行。</div></div></section>
+  <p class="footer">人设、B站活动和情绪语音都可以在这里设置。聊天记录和唱歌照常保留。</p>
+</main>
+<script nonce="__SCRIPT_NONCE__">
+(() => {
+  'use strict';
+  const byId = id => document.getElementById(id);
+  const csrf = document.querySelector('meta[name="csrf-token"]').content;
+  const configKeys = ['ownerQq', 'watchPerDay', 'commentPerDay', 'sharePerDay', 'intervalMinutes', 'commentGapMinutes', 'shareGapMinutes', 'keywords'];
+  let state = null, initialized = false, edited = false, qrKey = '', qrExpires = 0, qrTimer = null, statusBusy = false;
+  let speechState = null, speechEdited = false, speechBusy = false, speechSaving = false, speechRevision = 0;
+  let personaState = null, personaBaseText = '', personaBaseRevision = '', personaDirty = false, personaBusy = false, personaOperation = '', personaEpoch = 0, personaConflict = false, personaUnconfirmed = false;
+  const speechInputs = ['speechMode', 'speechMaxChars', 'speechIntensity', 'speechAutoRate'];
+  const phaseNames = {awaiting_owner:'等待选择接收 QQ',awaiting_login:'等待 B站登录',ready:'已开启自动活动',paused:'自动活动已暂停',busy:'正在看视频',error:'需要检查状态'};
+  const actionNames = {watch:'观看',comment:'评论',share:'推荐',login:'登录',run:'浏览',dry_run:'本地试运行',preview:'本地试运行',settings:'设置',error:'状态',pause:'暂停',configure:'设置'};
+  function notify(text, ok = false) { const el = byId('notice'); el.textContent = text; el.className = 'notice visible' + (ok ? ' ok' : ''); }
+  function apiError(message, status = 0, kind = 'response', uncertain = false) {
+    return Object.assign(new Error(message), { status, kind, uncertain });
+  }
+  function statusError(status) {
+    const messages = {400:'请求内容有误，请检查后再试。',401:'连接验证已失效，请重新连接。',403:'页面验证已失效，请先复制草稿，再刷新页面重试。',404:'没有找到所需内容，请刷新页面后重试。',408:'请求接收超时，请稍后重试。',409:'内容已在其他地方更改，请重载后再试。',413:'提交内容过大，请缩短后重试。',415:'提交格式不支持，请刷新页面后重试。',429:'请求过于频繁，请稍后重试。',431:'浏览器请求头过大，请先复制草稿，再重新打开页面。'};
+    return messages[status] || (status >= 500 ? '本机服务暂时无法完成请求，请稍后重试。' : '请求未完成，请稍后重试。');
+  }
+  async function api(route, body) {
+    const options = body === undefined ? {} : {method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf},body:JSON.stringify(body)};
+    let response, raw;
+    try { response = await fetch(route, {...options,cache:'no-store',credentials:'omit'}); }
+    catch { throw apiError('暂时无法连接本机服务，请确认服务仍在运行。', 0, 'network', body !== undefined); }
+    const status = response.status;
+    const uncertain = body !== undefined && (response.ok || status >= 500);
+    try { raw = await response.text(); }
+    catch { throw apiError('响应中断，未能读取完整结果。', status, 'interrupted', uncertain); }
+    let result;
+    if (raw.trim()) {
+      try { result = JSON.parse(raw); } catch { /* Never echo HTML or an unparsed server response. */ }
+    }
+    if (!response.ok) throw apiError(typeof result?.error === 'string' ? result.error : statusError(status), status, 'http', uncertain || (body !== undefined && result?.uncertain === true));
+    if (!result || typeof result !== 'object' || Array.isArray(result)) {
+      throw apiError(raw.trim() ? '本机服务返回了无法识别的结果。' : '本机服务返回了空响应。', status, raw.trim() ? 'invalid-json' : 'empty', uncertain);
+    }
+    return result;
+  }
+  function date(value) {
+    if (!value) return '';
+    const parsed = new Date(/^\d+$/.test(String(value)) ? Number(value) : value);
+    return Number.isNaN(parsed.getTime()) ? String(value) : parsed.toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+  }
+  function personaResult(text, warning = false) {
+    byId('personaResult').textContent = text;
+    byId('personaResult').className = 'persona-result' + (warning ? ' warning' : '');
+  }
+  function personaControls() {
+    const available = personaState?.available === true;
+    const operating = !!personaOperation;
+    byId('personaText').disabled = !available || operating;
+    byId('savePersona').disabled = !available || operating || (!personaDirty && !personaState?.needsApply);
+    byId('savePersona').textContent = personaOperation === 'save' ? '正在保存…' : personaOperation === 'verify' ? '正在核对…' : '保存并生效';
+    byId('reloadPersona').disabled = personaBusy || operating;
+    byId('reloadPersona').textContent = personaDirty ? '放弃草稿并重载' : '重载当前人设';
+    byId('personaBackup').disabled = !available || operating || !personaState?.backups?.length;
+    byId('loadPersonaBackup').disabled = !available || operating || !byId('personaBackup').value;
+    byId('personaCount').textContent = Array.from(byId('personaText').value).length.toLocaleString('zh-CN') + ' 字';
+    byId('personaStatus').textContent = personaOperation === 'save' ? '正在保存' : personaOperation === 'verify' ? '正在核对' : operating ? '正在载入' : !available ? '暂不可用' : personaUnconfirmed ? '待核对' : personaConflict ? '版本有变化' : personaDirty ? '未保存' : personaState?.needsApply ? '待生效' : '已保存';
+  }
+  function validPersonaState(next) {
+    return next?.available === true && typeof next.text === 'string' && typeof next.revision === 'string' && !!next.revision && typeof next.appliedRevision === 'string' && !!next.appliedRevision && typeof next.needsApply === 'boolean';
+  }
+  function personaApplied(next, text) {
+    return validPersonaState(next) && next.text === text && next.appliedRevision === next.revision && next.needsApply === false;
+  }
+  function renderPersona(next, replaceDraft = false) {
+    if (next?.available !== false && !validPersonaState(next)) throw apiError('人设状态不完整，请稍后重试。', 200, 'invalid-state', true);
+    const recoveredSave = personaUnconfirmed && personaApplied(next, byId('personaText').value);
+    if (recoveredSave) replaceDraft = true;
+    personaState = next;
+    if (next.available !== true) {
+      personaControls(); personaResult('人设编辑暂不可用，请稍后点击“重载当前人设”重试。', true); return;
+    }
+    if (!personaDirty || replaceDraft) {
+      byId('personaText').value = next.text;
+      personaBaseText = next.text; personaBaseRevision = next.revision;
+      personaDirty = false; personaConflict = false; personaUnconfirmed = false;
+      personaResult(recoveredSave ? '已核对：保存并生效成功，下一条回复会使用这版人设。' : next.needsApply ? '正文已在其他地方更改，尚未用于回复。点击“保存并生效”后启用。' : '正文已载入。修改后点击“保存并生效”。');
+    } else {
+      personaConflict = next.revision !== personaBaseRevision;
+      if (personaConflict) personaResult('当前人设已在其他地方修改。你的草稿已保留；请复制草稿后重载最新版本，再合并保存。', true);
+    }
+    byId('personaUpdated').textContent = '当前版本更新于：' + (date(next.updatedAt) || '未知');
+    const select = byId('personaBackup'), selected = select.value;
+    select.replaceChildren(new Option(next.backups?.length ? '请选择历史版本' : '还没有历史版本', ''));
+    for (const backup of next.backups || []) {
+      const created = new Date(backup.createdAt);
+      const stamp = Number.isNaN(created.getTime()) ? '日期未知' : created.toLocaleString('zh-CN');
+      select.add(new Option(stamp + ' · ' + (backup.label || '历史版本'), backup.id));
+    }
+    select.value = (next.backups || []).some(backup => backup.id === selected) ? selected : '';
+    personaControls();
+  }
+  async function refreshPersona(discardDraft = false) {
+    if (personaBusy || personaOperation) return;
+    if (discardDraft) { personaEpoch++; personaOperation = 'reload'; }
+    const epoch = personaEpoch;
+    personaBusy = true; personaControls();
+    try { const next = await api('/api/persona'); if (epoch === personaEpoch) renderPersona(next, discardDraft); }
+    catch { personaResult('读取失败，编辑框中的内容已保留。请稍后重载当前人设。', true); }
+    finally { personaBusy = false; if (discardDraft) personaOperation = ''; personaControls(); }
+  }
+  async function savePersona() {
+    if (personaState?.available !== true || personaOperation || (!personaDirty && !personaState.needsApply)) return;
+    const text = byId('personaText').value;
+    personaEpoch++; personaUnconfirmed = false; personaOperation = 'save'; personaControls();
+    try {
+      const next = await api('/api/persona', { text, revision: personaBaseRevision });
+      if (!personaApplied(next, text)) throw apiError('保存响应不完整，尚未确认生效。', 200, 'invalid-state', true);
+      renderPersona(next, true); personaResult('已保存并生效，下一条回复会使用这版人设。旧版本已自动备份。');
+    } catch (error) {
+      if (error.status === 409) { personaConflict = true; personaResult('保存未完成：当前人设已在其他地方修改。你的草稿已保留；请复制草稿后重载最新版本，再合并保存。', true); }
+      else if (error.uncertain) {
+        personaOperation = 'verify'; personaControls();
+        personaResult('保存响应未完整收到，正在核对是否已生效…');
+        try {
+          const current = await api('/api/persona');
+          if (!validPersonaState(current)) throw apiError('人设状态暂不可用。');
+          if (personaApplied(current, text)) {
+            renderPersona(current, true);
+            personaResult('已核对：保存并生效成功，下一条回复会使用这版人设。');
+          } else if (current.text === text && current.needsApply) {
+            renderPersona(current, true);
+            personaResult('已核对：正文已保存，但尚未确认生效。可点击“保存并生效”再次应用。', true);
+          } else if (current.text === text) {
+            throw apiError('人设生效状态不一致。');
+          } else {
+            personaDirty = true;
+            renderPersona(current);
+            personaResult('已核对：本次人设未保存，服务器仍未采用你提交的正文。草稿已保留，可以检查后再次保存。', true);
+          }
+        } catch {
+          personaUnconfirmed = true;
+          personaResult('保存结果尚未确认：响应中断，状态核对也未完成。草稿已保留；请先复制草稿，稍后重载核对，避免重复保存。', true);
+        }
+      }
+      else personaResult('保存未完成，草稿已保留。' + error.message, true);
+    } finally { personaOperation = ''; personaControls(); }
+  }
+  async function loadPersonaBackup() {
+    const id = byId('personaBackup').value;
+    if (!id || personaOperation) return;
+    personaEpoch++; personaOperation = 'backup'; personaControls();
+    try {
+      const next = await api('/api/persona/backup?id=' + encodeURIComponent(id));
+      byId('personaText').value = next.text; personaDirty = next.text !== personaBaseText;
+      personaResult('历史版本已载入为草稿，尚未生效。点击“保存并生效”后启用。');
+    } catch (error) { personaResult('历史版本载入失败，编辑框中的内容已保留。' + error.message, true); }
+    finally { personaOperation = ''; personaControls(); }
+  }
+  function renderHistory(items) {
+    const list = byId('historyList'); list.replaceChildren();
+    if (!items.length) { const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = '还没有活动记录。登录前可以先做一次本地试运行。'; list.append(empty); return; }
+    for (const item of items) {
+      const row = document.createElement('article'); row.className = 'history-item';
+      const top = document.createElement('div'); top.className = 'history-top';
+      const action = document.createElement('span'); action.textContent = actionNames[item.action] || item.action || '活动';
+      const time = document.createElement('span'); time.textContent = date(item.time); top.append(action,time); row.append(top);
+      const title = document.createElement(item.url ? 'a' : 'div'); title.className = 'history-title'; title.textContent = item.title || 'B站活动';
+      if (item.url) { title.href = item.url; title.target = '_blank'; title.rel = 'noopener noreferrer'; }
+      row.append(title);
+      const message = document.createElement('p'); message.className = 'history-message'; message.textContent = item.message || item.summary || item.status || ''; row.append(message); list.append(row);
+    }
+  }
+  function render(next) {
+    state = next;
+    byId('phaseText').textContent = phaseNames[next.phase] || '等待登录';
+    byId('phaseBadge').className = 'badge' + (next.phase === 'ready' ? ' ready' : '');
+    if (!edited) {
+      for (const key of configKeys) if (next.config[key] !== undefined) byId(key).value = key === 'keywords' ? next.config[key].join('，') : next.config[key];
+    }
+    initialized = true;
+    byId('loggedOut').hidden = next.account.loggedIn;
+    byId('loggedIn').hidden = !next.account.loggedIn;
+    byId('accountName').textContent = next.account.name || '已登录 B站';
+    byId('accountUid').textContent = next.account.uid ? 'UID ' + next.account.uid : '';
+    byId('toggleEnabled').textContent = next.config.enabled ? '暂停自动活动' : '继续自动活动';
+    byId('watchedCount').textContent = next.stats.todayWatched;
+    byId('commentCount').textContent = next.stats.todayComments;
+    byId('sharedCount').textContent = next.stats.todayShared;
+    byId('lastRun').textContent = '上次浏览：' + (date(next.stats.lastRunAt) || '尚未开始');
+    byId('nextRun').textContent = '下次浏览：' + (next.config.enabled && next.account.loggedIn ? date(next.stats.nextRunAt) || '按计划安排' : next.account.loggedIn ? '已暂停' : '等待登录');
+    byId('dryRun').disabled = next.stats.busy;
+    byId('dryRun').textContent = next.stats.busy ? '正在分析视频…' : '本地试运行';
+    byId('startLogin').disabled = !byId('ownerQq').value;
+    renderHistory(next.recent || []);
+  }
+  async function refresh() {
+    if (statusBusy) return;
+    statusBusy = true;
+    try { render(await api('/api/status')); }
+    catch (error) { notify(error.message); }
+    finally { statusBusy = false; }
+  }
+  function speechControls() {
+    const available = speechState?.available === true;
+    const mode = byId('speechMode').value;
+    byId('speechMode').disabled = !available || speechSaving;
+    byId('speechMaxChars').disabled = !available || speechSaving || mode === 'text';
+    byId('speechIntensity').disabled = !available || speechSaving || mode === 'text';
+    byId('speechAutoRate').disabled = !available || speechSaving || mode !== 'auto';
+    byId('saveSpeech').disabled = !available || speechSaving;
+    byId('speechIntensityValue').textContent = byId('speechIntensity').value + '%';
+    byId('speechAutoRateValue').textContent = byId('speechAutoRate').value + '%';
+  }
+  function renderSpeech(next) {
+    speechState = next;
+    if (next.config && !speechEdited) {
+      byId('speechMode').value = next.config.enabled ? next.config.mode : 'text';
+      byId('speechMaxChars').value = next.config.maxChars;
+      byId('speechIntensity').value = Math.round(next.config.intensity * 100);
+      byId('speechAutoRate').value = Math.round(next.config.autoRate * 100);
+    }
+    const active = next.config?.enabled && next.config.mode !== 'text';
+    byId('speechStatus').textContent = !next.available ? '暂未接入' : !active ? '仅文字' : next.busy ? '正在准备语音' : !next.ready ? '准备中' : '已开启';
+    byId('speechHint').textContent = !next.available ? '情绪语音暂不可用，文字聊天照常。' : next.hasError ? '上次语音没有完成，聊天会继续用文字回复。' : !active ? '当前只发文字，可随时切换回复方式。' : !next.ready ? '声音还在准备，期间继续用文字回复。' : '设置会用于接下来的聊天；语音未完成时会用文字回复。';
+    speechControls();
+  }
+  async function refreshSpeech() {
+    if (speechBusy || speechSaving) return;
+    speechBusy = true;
+    const revision = speechRevision;
+    try { const next = await api('/api/speech'); if (revision === speechRevision) renderSpeech(next); }
+    catch { byId('speechStatus').textContent = '状态暂不可用'; byId('speechHint').textContent = '稍后会自动重试，文字聊天照常。'; }
+    finally { speechBusy = false; }
+  }
+  async function saveSpeech() {
+    const maxChars = byId('speechMaxChars');
+    const length = Number(maxChars.value);
+    if (!Number.isInteger(length) || length < 20 || length > 500) { maxChars.reportValidity(); notify('单条语音字数应为 20–500 的整数。'); return; }
+    const mode = byId('speechMode').value;
+    const config = { enabled: mode !== 'text', mode, maxChars: Number(maxChars.value), intensity: Number(byId('speechIntensity').value) / 100, autoRate: Number(byId('speechAutoRate').value) / 100 };
+    speechRevision++; speechSaving = true; speechControls();
+    try { const next = await api('/api/speech', config); speechEdited = false; renderSpeech(next); notify('语音设置已保存。', true); }
+    catch (error) { notify(error.message); }
+    finally { speechSaving = false; speechControls(); }
+  }
+  async function loadFriends() {
+    try {
+      const result = await api('/api/friends');
+      const selected = byId('ownerQq').value || state?.config.ownerQq || '';
+      const select = byId('ownerQq'); select.replaceChildren(new Option('请选择接收推荐的 QQ', ''));
+      for (const friend of result.friends) select.add(new Option((friend.remark || friend.nickname || 'QQ 好友') + ' · ' + friend.user_id, friend.user_id));
+      select.value = selected;
+      byId('friendsHint').textContent = result.friends.length ? '推荐通过当前大肥鱼的 QQ 私聊发送。' : '尚未取得好友列表，请确认 QQ 在线后点击刷新好友。';
+      byId('startLogin').disabled = !select.value;
+    } catch (error) { byId('friendsHint').textContent = '好友列表暂不可用，请稍后刷新。'; notify(error.message); }
+  }
+  function readSettings() {
+    const config = {ownerQq:byId('ownerQq').value,keywords:byId('keywords').value.split(/[,，\n]/).map(v => v.trim()).filter(Boolean)};
+    if (!config.ownerQq) throw new Error('请先选择接收推荐的 QQ。');
+    if (config.keywords.length < 1 || config.keywords.length > 12 || config.keywords.some(v => v.length > 30)) throw new Error('请填写 1–12 个话题，每个最多 30 字。');
+    for (const key of configKeys.slice(1,-1)) {
+      const input = byId(key);
+      if (!input.checkValidity()) { input.reportValidity(); throw new Error('请检查活动数量和间隔。'); }
+      config[key] = Number(input.value);
+    }
+    return config;
+  }
+  async function save() {
+    const next = await api('/api/config', readSettings()); edited = false; render(next); return next;
+  }
+  async function busyButton(id, fn) {
+    const button = byId(id); button.disabled = true;
+    try { await fn(); } catch (error) { notify(error.message); }
+    finally { button.disabled = id === 'startLogin' ? !byId('ownerQq').value : id === 'dryRun' ? !!state?.stats.busy : false; }
+  }
+  function stopQr() { clearTimeout(qrTimer); qrTimer = null; qrKey = ''; }
+  async function pollQr() {
+    const key = qrKey;
+    if (!key) return;
+    if (Date.now() >= qrExpires) { stopQr(); byId('qrStatus').textContent = '二维码已过期，请重新生成。'; byId('startLogin').textContent = '重新生成二维码'; return; }
+    try {
+      const result = await api('/api/login/poll',{key});
+      if (qrKey !== key) return;
+      if (result.status === 'confirmed') {
+        stopQr(); byId('qrStatus').textContent = '登录成功，正在启用自动活动…';
+        try { await api('/api/config',{enabled:true}); notify('已登录并开启 B站活动，之后会按设置向你分享视频。',true); }
+        catch { notify('B站已登录，但自动活动尚未启用。请检查状态后点击“继续自动活动”。'); }
+        await refresh(); return;
+      }
+      if (result.status === 'expired') { stopQr(); byId('qrStatus').textContent = '二维码已过期，请重新生成。'; byId('startLogin').textContent = '重新生成二维码'; return; }
+      byId('qrStatus').textContent = result.status === 'scanned' ? '已扫码，请在手机上确认登录。' : '等待扫码 · 请使用哔哩哔哩 App';
+    } catch { byId('qrStatus').textContent = '正在重新检查扫码状态…'; }
+    if (qrKey === key) qrTimer = setTimeout(pollQr,3000);
+  }
+  for (const key of configKeys) byId(key).addEventListener('input',() => { if (initialized) edited = true; byId('startLogin').disabled = !byId('ownerQq').value; });
+  byId('saveSettings').addEventListener('click',() => busyButton('saveSettings',async () => { await save(); notify('设置已保存。',true); }));
+  byId('refreshFriends').addEventListener('click',() => busyButton('refreshFriends',loadFriends));
+  byId('startLogin').addEventListener('click',() => busyButton('startLogin',async () => {
+    stopQr(); await save();
+    const qr = await api('/api/login/start',{});
+    qrKey = qr.key; qrExpires = qr.expiresAt;
+    byId('qrImage').src = qr.image; byId('qrPlaceholder').hidden = true; byId('qrBox').hidden = false;
+    byId('qrStatus').textContent = '等待扫码 · 请使用哔哩哔哩 App'; byId('startLogin').textContent = '重新生成二维码';
+    byId('notice').className = 'notice'; qrTimer = setTimeout(pollQr,1500);
+  }));
+  byId('toggleEnabled').addEventListener('click',() => busyButton('toggleEnabled',async () => { const enabled = !state?.config.enabled; render(await api('/api/config',{enabled})); notify(enabled ? '已继续自动活动。' : '已暂停自动活动。',true); }));
+  byId('dryRun').addEventListener('click',() => busyButton('dryRun',async () => { await api('/api/run',{dryRun:true}); notify('已开始本地试运行，不会发送评论或 QQ 消息。结果会出现在最近记录中。',true); await refresh(); }));
+  for (const id of speechInputs) byId(id).addEventListener('input', () => { speechEdited = true; speechControls(); });
+  byId('saveSpeech').addEventListener('click', saveSpeech);
+  byId('personaText').addEventListener('input', () => {
+    personaEpoch++; personaUnconfirmed = false; personaDirty = byId('personaText').value !== personaBaseText;
+    personaConflict = personaDirty && personaState?.revision !== personaBaseRevision;
+    personaResult(personaConflict ? '当前人设已在其他地方修改。草稿已保留；请复制后重载最新版本再合并。' : personaDirty ? '有未保存修改。点击“保存并生效”后用于下一条回复。' : personaState?.needsApply ? '正文已在其他地方更改，尚未用于回复。点击“保存并生效”后启用。' : '正文与当前版本相同。', personaConflict);
+    personaControls();
+  });
+  byId('savePersona').addEventListener('click', savePersona);
+  byId('reloadPersona').addEventListener('click', () => refreshPersona(true));
+  byId('personaBackup').addEventListener('change', personaControls);
+  byId('loadPersonaBackup').addEventListener('click', loadPersonaBackup);
+  document.addEventListener('visibilitychange',() => { if (!document.hidden) { refresh(); refreshSpeech(); refreshPersona(); } });
+  window.addEventListener('pagehide',stopQr);
+  window.addEventListener('beforeunload', event => { if (personaDirty) { event.preventDefault(); event.returnValue = ''; } });
+  (async () => { await Promise.all([refresh(), refreshSpeech(), refreshPersona()]); await loadFriends(); })();
+  setInterval(() => { if (!document.hidden) { refresh(); refreshSpeech(); refreshPersona(); } },10000);
+})();
+</script>
+</body>
+</html>

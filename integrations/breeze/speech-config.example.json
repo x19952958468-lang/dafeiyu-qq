@@ -1,0 +1,16 @@
+{
+  "enabled": false,
+  "mode": "auto",
+  "autoRate": 0.7,
+  "intensity": 0.85,
+  "maxChars": 160,
+  "backendUrl": "http://127.0.0.1:6197/v1/audio/speech",
+  "referenceAudio": "PLACEHOLDER_ABSOLUTE_REFERENCE_WAV",
+  "referenceText": "REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT",
+  "voiceId": "",
+  "ffmpeg": "ffmpeg",
+  "requestTimeoutMs": 120000,
+  "queueTimeoutMs": 120000,
+  "cfgScale": 4,
+  "seed": 42
+}

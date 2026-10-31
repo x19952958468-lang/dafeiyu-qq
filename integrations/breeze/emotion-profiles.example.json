@@ -1,0 +1,45 @@
+{
+  "happy": {
+    "referenceAudio": "PLACEHOLDER_ABSOLUTE_REFERENCE_WAV",
+    "referenceText": "REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT",
+    "cfgScale": 4,
+    "instruction": "语气明亮、开心，轻快地说给熟人听。重音自然，有一点笑意，句尾轻轻收住，保持参考声音的身份和音色。",
+    "variant": "mixed"
+  },
+  "sad": {
+    "referenceAudio": "PLACEHOLDER_ABSOLUTE_REFERENCE_WAV",
+    "referenceText": "REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT",
+    "cfgScale": 2,
+    "instruction": "用自然、克制的哭腔说话，声音轻轻发颤，有真实的停顿和不稳定的呼吸。不要把每个字都拖长，也不要夸张喊叫；保持参考声音的身份和音色。",
+    "variant": "mixed",
+    "vocalization": "sob"
+  },
+  "annoyed": {
+    "referenceAudio": "PLACEHOLDER_ABSOLUTE_REFERENCE_WAV",
+    "referenceText": "REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT",
+    "cfgScale": 4,
+    "instruction": "有一点不满和抗议，起初克制，关键字稍重，随后放软。不吼叫、不粗声粗气，保持参考声音的身份和音色。",
+    "variant": "mixed"
+  },
+  "gentle": {
+    "referenceAudio": "PLACEHOLDER_ABSOLUTE_REFERENCE_WAV",
+    "referenceText": "REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT",
+    "cfgScale": 4,
+    "instruction": "温柔地安慰或关心对方，语速稍缓，重音清楚，句尾柔和。保持自然的声音起伏与参考音色，不要全程气声。",
+    "variant": "mixed"
+  },
+  "playful": {
+    "referenceAudio": "PLACEHOLDER_ABSOLUTE_REFERENCE_WAV",
+    "referenceText": "REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT",
+    "cfgScale": 4,
+    "instruction": "俏皮地逗熟人，轻松、有笑意，重音和句尾有自然的小变化。不要机械朗读或每个字都撒娇，保持参考声音的身份和音色。",
+    "variant": "mixed"
+  },
+  "surprised": {
+    "referenceAudio": "PLACEHOLDER_ABSOLUTE_REFERENCE_WAV",
+    "referenceText": "REPLACE_WITH_EXACT_REFERENCE_TRANSCRIPT",
+    "cfgScale": 4,
+    "instruction": "刚听到意外消息，开头略微扬起，随后自然落回说话声。惊讶但不尖叫，保持参考声音的身份和音色。",
+    "variant": "mixed"
+  }
+}

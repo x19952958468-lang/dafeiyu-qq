@@ -1,0 +1,55 @@
+{
+  "onebot": {
+    "ws": "ws://127.0.0.1:3001",
+    "accessToken": "",
+    "reconnectDelayMs": 3000,
+    "autoAcceptInvite": false
+  },
+  "llm": {
+    "baseUrl": "https://api.deepseek.com/v1",
+    "apiKey": "",
+    "model": "deepseek-chat",
+    "judgeModel": "deepseek-chat",
+    "temperature": 0.85,
+    "maxTokens": 300,
+    "timeoutMs": 45000
+  },
+  "persona": { "file": "persona/dafeiyu.md", "selfName": "大肥鱼" },
+  "trigger": {
+    "alwaysReplyMention": false,
+    "alwaysReplyPrivate": false,
+    "alwaysReplyToReply": false,
+    "interjectRate": 0,
+    "interjectMinGapSec": 300,
+    "interjectMinChars": 5,
+    "interjectRampSec": 0,
+    "keywordWake": [],
+    "ignoreUserIds": [],
+    "focusUsers": []
+  },
+  "reply": {
+    "maxChars": 160, "maxSegments": 2,
+    "typingCharsPerSec": 7, "segmentGapMs": [400, 1200]
+  },
+  "proactiveAt": {
+    "groups": [], "everySec": 600, "minGapAfterBotSec": 120,
+    "onlyRecentSec": 900, "personCooldownSec": 1800, "maxPerHour": 6
+  },
+  "judge": { "enabled": true },
+  "context": { "maxTurns": 24, "maxChars": 700, "maxAgeSec": 600 },
+  "memory": { "noteCount": 3, "noteMaxChars": 120 },
+  "limits": {
+    "dailyBudgetCny": 3, "totalBudgetCny": 50,
+    "groupCooldownSec": 15, "maxRepliesPerGroupPerHour": 40, "quietHours": []
+  },
+  "pricing": { "inputPerMillion": 2, "outputPerMillion": 8 },
+  "whitelist": {
+    "groups": ["REPLACE_WITH_GROUP_ID"],
+    "friends": ["REPLACE_WITH_FRIEND_QQ"]
+  },
+  "mutedGroups": [],
+  "singing": {
+    "enabled": false, "dataDir": "data/singing", "timeoutSec": 900,
+    "cooldownSec": 20, "maxPending": 3, "targetDurationSec": 20
+  }
+}

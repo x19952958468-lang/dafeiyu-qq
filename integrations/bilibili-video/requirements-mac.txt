@@ -1,0 +1,7 @@
+# Installed versions used by the Apple Silicon video analysis adapter.
+# Use a separate Python 3.12 environment; do not merge with speech/singing.
+mlx-vlm==0.7.11
+mlx==0.32.4
+transformers==5.22.0
+faster-whisper==1.2.1
+ctranslate2==4.8.4

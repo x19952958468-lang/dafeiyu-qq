@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="same-origin">
+  <title>大肥鱼 · 人设编辑</title>
+  <style nonce="__SCRIPT_NONCE__">
+    :root{color-scheme:light;--ink:#173f3b;--muted:#687e79;--line:#dce6e0;--green:#1d7665}
+    *{box-sizing:border-box}body{margin:0;background:#f3f5ed;color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.shell{max-width:900px;margin:auto;padding:32px 24px 48px}.topline{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}.brand{font-weight:700}.local{font-size:12px;color:var(--muted)}.card{background:#fffefa;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 4px 18px #173f3b04}h1{font-size:27px;line-height:1.35;margin:0 0 10px}p{margin:0}.muted{color:var(--muted)}.small{font-size:12px}.status{margin:20px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#eff6ef;color:#46635a;white-space:pre-wrap;overflow-wrap:anywhere}.status.success{border-color:#bfd8ca;background:#eaf4eb;color:#2a604d}.status.error{border-color:#d3ad80;background:#fff4e4;color:#6a4b20}label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}textarea{display:block;width:100%;min-height:340px;resize:vertical;background:white;color:var(--ink);border:1px solid #cbd9d0;border-radius:10px;padding:15px;font:14px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #b5d6ca;outline-offset:2px}.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:7px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin:20px 0 12px}button{cursor:pointer;border:0;border-radius:10px;padding:11px 20px;background:var(--green);color:white;font:inherit;font-weight:600;line-height:1.5}button:disabled{cursor:not-allowed;opacity:.45}button:hover:not(:disabled){filter:brightness(.94)}a{color:var(--green);text-underline-offset:3px}.hint{min-height:22px;margin-top:10px}.footer{margin-top:20px;text-align:center;color:var(--muted);font-size:12px}
+    @media(max-width:600px){.shell{padding:20px 14px 32px}.card{padding:19px}h1{font-size:24px}textarea{min-height:380px}.topline{margin-bottom:16px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <div class="topline"><span class="brand">𓆟 大肥鱼</span><span class="local">本机专用 · 兼容保存</span></div>
+  <section class="card" aria-labelledby="personaFormTitle">
+    <h1 id="personaFormTitle">人设编辑</h1>
+    <p class="muted">直接填写或修改她的人设。保存后用于下一条回复，旧版本自动备份，聊天记录保留。</p>
+    <p id="personaFormStatus" class="status __PERSONA_STATUS_CLASS__" role="status" aria-live="polite">__PERSONA_STATUS__</p>
+    <form id="personaForm" method="post" action="__PERSONA_FORM_ACTION__" target="_blank" rel="noopener" accept-charset="UTF-8">
+      <input id="personaFormCsrf" type="hidden" name="csrf" value="__CSRF_NONCE__">
+      <input id="personaFormRevision" type="hidden" name="revision" value="__PERSONA_REVISION__">
+      <input id="personaFormTextJson" type="hidden" name="textJson" value="__PERSONA_TEXT_JSON__">
+      <label for="personaFormText">人设正文</label>
+      <textarea id="personaFormText" rows="20" spellcheck="false" aria-describedby="personaFormCount personaFormHint">
+__PERSONA_TEXT__</textarea>
+      <div class="meta small muted"><span id="personaFormCount">正在读取字数</span><span>保留原文，不会自动改写</span></div>
+      <div class="actions"><button id="personaFormSave" type="submit" disabled>保存并生效</button><a href="__MANAGER_URL__">回管理页</a></div>
+      <p id="personaFormHint" class="small muted">原稿页会保留，保存结果在新页面显示。保存成功后，请在结果页继续编辑。</p>
+      <p id="personaFormProgress" class="hint small muted" role="status" aria-live="polite"></p>
+      <noscript><p class="status error">页面脚本未能运行，保存按钮已停用。请重新打开本页。</p></noscript>
+    </form>
+  </section>
+  <p class="footer">大肥鱼 · 人设设置</p>
+</main>
+<script nonce="__SCRIPT_NONCE__">
+(() => {
+  'use strict';
+  const form = document.getElementById('personaForm');
+  const editor = document.getElementById('personaFormText');
+  const payload = document.getElementById('personaFormTextJson');
+  const save = document.getElementById('personaFormSave');
+  const count = document.getElementById('personaFormCount');
+  const progress = document.getElementById('personaFormProgress');
+  function updateCount() { count.textContent = Array.from(editor.value).length.toLocaleString('zh-CN') + ' 字'; }
+  editor.addEventListener('input', updateCount);
+  form.addEventListener('submit', () => {
+    payload.value = JSON.stringify(editor.value);
+    progress.textContent = '正在新页面保存，请以新页面显示的结果为准。这里的草稿仍会保留。';
+  });
+  updateCount();
+  save.disabled = false;
+})();
+</script>
+</body>
+</html>

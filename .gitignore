@@ -1,0 +1,57 @@
+# Local settings and all account / conversation state
+/config.json
+/config.local.json
+/config.json.*
+/data/
+/.env
+/.env.*
+!/.env.example
+
+# Keep only the neutral persona template in version control
+/persona/*
+!/persona/example.md
+
+# Third-party downloads, models, runtimes and generated content
+/work/
+/models/
+/outputs/
+/proto/
+/vendor/
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Local model and media artifacts
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.gguf
+*.onnx
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.silk
+*.pcm
+*.mp4
+*.webm
+
+# Secrets, logs and working copies
+*credentials*.json
+*cookies*.json
+*.pem
+*.key
+*.log
+*.bak
+*.tmp
+*.pid
+.DS_Store
+coverage/
+*.local.json

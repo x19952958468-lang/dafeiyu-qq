@@ -1,0 +1,26 @@
+{
+  "name": "dafeiyu-qq",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "QQ 聊天助手：OneBot 11、唱歌、情绪语音和 B站活动",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "sim": "node tools/simulate.js",
+    "doctor": "node tools/doctor.js",
+    "setup": "node scripts/setup.js",
+    "test": "node scripts/test.js",
+    "check": "node scripts/check.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x19952958468-lang/dafeiyu-qq.git"
+  },
+  "bugs": {
+    "url": "https://github.com/x19952958468-lang/dafeiyu-qq/issues"
+  }
+}

@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.sh text eol=lf
+
+# Empty context lines in unified patches contain a required leading space.
+*.patch -whitespace
